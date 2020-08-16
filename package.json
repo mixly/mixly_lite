@@ -1,0 +1,10 @@
+{
+ "main": "index.html",
+ "name": "MithonWeb",
+ "description": "Mithon Web Editor",
+ "version": "1.0.0",
+ "nodejs": true,
+ "node-remote": "file://*/*",
+ "permissions": ["*://*/*"],
+ "chromium-args": "--disable-web-security --allow-file-access-from-files --allow-file-access --user-data-dir --allow-running-insecure-content --enable-local-file-accesses"
+ }
