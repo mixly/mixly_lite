@@ -1,0 +1,10 @@
+{
+     "name": "Mixly2.0 wiki",
+     "ver": "v1.3",
+     "logo": "./image/mixly.png",
+     "page-mounts": false,
+     "libraryPrefix": "./library/",
+     "imports": [
+       "./js/config.js"
+     ]
+}

@@ -1,0 +1,124 @@
+#table_whole {
+    height: calc(100vh - 2.6em) !important;
+}
+
+.layui-form-label > .layui-unselect.layui-form-checkbox > span {
+    height: 25px;
+}
+
+.layui-layout-left {
+    position: absolute !important;
+    left: 0px;
+    top: 0;
+}
+
+.layui-nav .layui-nav-item a {
+    position: relative;
+    overflow: hidden;
+}
+
+.layui-nav .layui-nav-item a:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #666 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.5s;
+}
+
+.layui-nav .layui-nav-item a:active:after {
+    transform: scale(0, 0);
+    opacity: 0.3;
+    transition: 0s;
+}
+
+html[data-bs-theme=light] .layui-layer-tips .layui-layer-content {
+    background-color: #f2f2f2;
+    color: #000;
+    box-shadow: 1px 1px 3px rgb(0 0 0 / 20%);
+}
+
+html[data-bs-theme=dark] .layui-layer-tips .layui-layer-content {
+    background-color: #646363;
+    color: #fff;
+    box-shadow: 1px 1px 3px rgb(0 0 0 / 20%);
+}
+
+.footer-tips .layui-layer-content {
+    padding: 3px 12px;
+}
+
+html[data-bs-theme=light] .layui-layer-tips i.layui-layer-TipsL {
+    border-left-color: #f2f2f2;
+}
+
+html[data-bs-theme=dark] .layui-layer-tips i.layui-layer-TipsL {
+    border-left-color: #646363;
+}
+
+html[data-bs-theme=light] .layui-layer-tips i.layui-layer-TipsR {
+    border-right-color: #f2f2f2;
+}
+
+html[data-bs-theme=dark] .layui-layer-tips i.layui-layer-TipsR {
+    border-right-color: #646363;
+}
+
+html[data-bs-theme=light] .layui-layer-tips i.layui-layer-TipsT {
+    border-top-color: #f2f2f2;
+}
+
+html[data-bs-theme=dark] .layui-layer-tips i.layui-layer-TipsT {
+    border-top-color: #646363;
+}
+
+html[data-bs-theme=light] .layui-layer-tips i.layui-layer-TipsB {
+    border-bottom-color: #f2f2f2;
+}
+
+html[data-bs-theme=dark] .layui-layer-tips i.layui-layer-TipsB {
+    border-bottom-color: #646363;
+}
+
+.layui-table-fixed-r > .layui-table-header {
+    border-bottom-width: 0px;
+}
+
+.layui-table-fixed-r > .layui-table-body > table {
+    width: 100%;
+}
+
+html[data-bs-theme=dark] .layui-table-body .layui-none {
+    color: #fff;
+}
+
+html[data-bs-theme=dark] .layui-form-checkbox[lay-skin=primary] span {
+    color: #fff;
+}
+
+html[data-bs-theme=light] .layui-table-tips-main {
+    background-color: #fff;
+    color: #5f5f5f;
+}
+
+html[data-bs-theme=dark] .layui-table-tips-main {
+    background-color: #8d8888;
+    color: #fff;
+}
+
+html[data-bs-theme=light] input[m-id="search-area"] {
+    background-color: #f3efef;
+    border-color: #ddd;
+}
+
+html[data-bs-theme=light] input[m-id="search-area"] + button.layui-btn-disabled {
+    background-color: #f3efef !important;
+}

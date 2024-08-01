@@ -1,0 +1,21 @@
+# 同步时忽略以下路径
+__pycache__
+*.pyc
+*.DS_Store
+boards/default/**/libraries/ThirdParty/
+boards/default/**/libraries/myLib/
+boards/default/**/libraries/cloudLibsUrl.json
+boards/default/**/wiki/content.md
+boards/default/**/build/lib/libs.json
+boards/default/**/build/upload/
+boards/default_src/**/libraries/ThirdParty/
+boards/default_src/**/libraries/myLib/
+boards/default_src/**/libraries/cloudLibsUrl.json
+boards/default_src/**/wiki/content.md
+boards/default_src/**/build/lib/libs.json
+boards/default_src/**/build/upload/
+boards/extend/
+node_modules
+package-lock.json
+.idea
+yarn.lock
