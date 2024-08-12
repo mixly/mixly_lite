@@ -8,7 +8,7 @@
         "type": "command",
         "portSelect": "all",
         "micropython:esp32c2:mixgo_mini": {
-            "command": "\"{esptool}\" --chip esp32c2 --port {com} --baud 115200 --after=no_reset_stub erase_flash && \"{esptool}\" --chip esp32c2 --port {com} --baud 460800 --after=no_reset_stub write_flash 0x0 \"{indexPath}/build/Mixgo_Mini-v1.23.0.bin\" 0X3A0000 \"{indexPath}/../micropython_common/build/HZK12.bin\""
+            "command": "\"{esptool}\" --chip esp32c2 --port {com} --baud 115200 --after=no_reset_stub erase_flash && \"{esptool}\" --chip esp32c2 --port {com} --baud 460800 --after=no_reset_stub write_flash 0x0 \"{indexPath}/build/Mixgo_Mini-v1.23.0.bin\" 0X3A0000 \"{indexPath}/../micropython/build/HZK12.bin\""
         },
         "micropython:esp32c2:generic_2M": {
             "command": "\"{esptool}\" --chip esp32c2 --port {com} --baud 460800 erase_flash && \"{esptool}\" --chip esp32c2 --port {com} --baud 460800 write_flash 0x0 \"{indexPath}/build/Mixgo_Mini-v1.23.0-26mhz.bin\" "
@@ -18,7 +18,7 @@
         "type": "command",
         "portSelect": "all",
         "libPath": [
-            "{indexPath}/../micropython_common/build/lib",
+            "{indexPath}/../micropython/build/lib",
             "{indexPath}/build/lib"
         ],
         "command": "\"{ampy}\" -p {com} -d 1 -r \"{reset}\" put \"{indexPath}/build/upload\"",
@@ -65,7 +65,7 @@
                         "path": "./build/Mixgo_Mini_lib-v1.23.0.bin"
                     }, {
                         "offset": "0x3A0000",
-                        "path": "../micropython_common/build/HZK12.bin"
+                        "path": "../micropython/build/HZK12.bin"
                     }
                 ]
             },
