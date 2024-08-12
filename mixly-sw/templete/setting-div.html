@@ -17,6 +17,10 @@
         border-left-width: 10px;
     }
 
+    #setting-menu-options > li > a {
+        cursor: pointer;
+    }
+
     #setting-menu-body {
         position: absolute;
         right: 0px;
@@ -170,7 +174,7 @@
             <ul id="setting-menu-options" class="layui-nav layui-nav-tree layui-bg-cyan layui-inline"
                 lay-filter="setting-menu-filter">
                 <li class="layui-nav-item layui-this" lay-id="0">
-                    <a m-id="0" href="javascript:;">{{ d.personalise }}</a>
+                    <a m-id="0">{{ d.personalise }}</a>
                 </li>
                 {{# if(d.env === 'electron'){ }}
                 <li class="layui-nav-item" lay-id="1">
@@ -179,7 +183,7 @@
                 {{# } }}
                 {{# if(d.env === 'web-socket'){ }}
                 <li class="layui-nav-item" lay-id="2">
-                    <a m-id="2" href="javascript:;">{{ d.checkForUpdates }}</a>
+                    <a m-id="2">{{ d.checkForUpdates }}</a>
                 </li>
                 {{# } }}
             </ul>

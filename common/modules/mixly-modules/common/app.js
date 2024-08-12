@@ -219,7 +219,7 @@ class App extends Component {
             },
             callback: () => BU.initBurn(),
             scopeType: Nav.Scope.LEFT,
-            weight: 4
+            weight: 3
         });
 
         this.#nav_.register({

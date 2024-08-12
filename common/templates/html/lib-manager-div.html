@@ -27,6 +27,10 @@
             border-left-width: 10px;
         }
 
+        #libs-menu-options > li > a {
+            cursor: pointer;
+        }
+
         #libs-menu-body {
             position: absolute;
             right: 0px;
@@ -148,10 +152,10 @@
                 lay-filter="libs-menu-filter"
             >
                 <li class="layui-nav-item layui-this" lay-id="import">
-                    <a m-id="0" href="javascript:;">{{d.importBoard}}</a>
+                    <a m-id="0">{{d.importBoard}}</a>
                 </li>
                 <li class="layui-nav-item" lay-id="delete">
-                    <a m-id="1" href="javascript:;">{{d.delBoard}}</a>
+                    <a m-id="1">{{d.delBoard}}</a>
                 </li>
             </ul>
         </div>

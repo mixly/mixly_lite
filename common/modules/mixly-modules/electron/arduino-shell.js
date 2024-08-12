@@ -329,10 +329,12 @@ ArduShell.upload = (boardType, port) => {
     }
     ArduShell.runCmd(layerNum, 'upload', cmdStr,
         function () {
-            mainStatusBarTabs.add('serial', port);
-            mainStatusBarTabs.changeTo(port);
-            const statusBarSerial = mainStatusBarTabs.getStatusBarById(port);
-            statusBarSerial.open();
+            setTimeout(() => {
+                mainStatusBarTabs.add('serial', port);
+                mainStatusBarTabs.changeTo(port);
+                const statusBarSerial = mainStatusBarTabs.getStatusBarById(port);
+                statusBarSerial.open();
+            }, 1000);
         }
     );
 }
@@ -492,7 +494,6 @@ ArduShell.runCmd = (layerNum, type, cmd, sucFunc) => {
         layer.close(layerNum);
         let message = '';
         if (info.code) {
-            
             message = (type === 'compile' ? Msg.Lang['shell.compileFailed'] : Msg.Lang['shell.uploadFailed']);
             statusBarTerminal.addValue("==" + message + "==\n");
         } else {
