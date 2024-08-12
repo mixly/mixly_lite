@@ -259,3 +259,11 @@ html[data-bs-theme=light] > body > .select2-container > .select2-dropdown {
 html[data-bs-theme=dark] > body > .select2-container > .select2-dropdown {
     outline: 1px solid var(--app-dark-color);
 }
+
+.service-single > a,
+.service-single > a > img {
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -ms-user-drag: none;
+    user-drag: none;
+}

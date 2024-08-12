@@ -41,7 +41,7 @@ const BOARD_DEFAULT_CONFIG = {
 };
 
 const SOFTWARE_DEFAULT_CONFIG = {
-    "version": "Mixly2.0"
+    "version": "Mixly3.0"
 };
 
 /**

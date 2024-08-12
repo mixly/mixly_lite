@@ -23,12 +23,12 @@ let cloudSoftwareJson = null;
 const usbDetection = require('usb-detection');
 
 usbDetection.startMonitoring();
-usbDetection.on('change', (device) => {
+usbDetection.on('add', (device) => {
     setTimeout(() => {
         sendCommand({
             obj: 'Mixly.Electron.Serial',
             func: 'refreshPorts',
-            args: []
+            args: [device]
         });
     }, 1000);
 });
@@ -38,7 +38,7 @@ usbDetection.on('remove', (device) => {
         sendCommand({
             obj: 'Mixly.Electron.Serial',
             func: 'refreshPorts',
-            args: []
+            args: [device]
         });
     }, 1000);
 });
@@ -244,7 +244,7 @@ function createWindow(filePath = null, indexUrl = null) {
 
     win.on('unresponsive', async () => {
         const { response } = await dialog.showMessageBox({
-            message: 'Mixly2.0无响应',
+            message: 'Mixly3.0无响应',
             title: '您想尝试强制重新加载应用程序吗？',
             buttons: ['确定', '取消'],
             cancelId: 1

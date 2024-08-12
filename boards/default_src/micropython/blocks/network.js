@@ -116,9 +116,7 @@ export const network_wifi_connect = {
         this.appendValueInput('VAR')
             .setCheck("var")
         this.appendDummyInput("")
-            .appendField(Blockly.Msg.MIXLY_NETWORK_WIFI_CONNECT);
-        this.appendDummyInput("")
-            .appendField(Blockly.Msg.MIXLY_SYMBOL_QUESTION);
+            .appendField(Blockly.Msg.MIXLY_NETWORK_WIFI_CONNECT + Blockly.Msg.MIXLY_SYMBOL_QUESTION);
         this.setOutput(true, Boolean);
         this.setInputsInline(true);
         this.setTooltip(Blockly.Msg.MIXLY_ESP32_NETWORK_WIFI_CONNECT_TOOLTIP);

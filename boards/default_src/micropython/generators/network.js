@@ -31,7 +31,8 @@ export const network_connect = function (_, generator) {
 export const network_wifi_connect = function (_, generator) {
     generator.definitions_['import_network'] = "import network";
     var varName = generator.valueToCode(this, 'VAR', generator.ORDER_ATOMIC);
-    return "" + varName + ".isconnected()\n";
+    var code = varName + '.isconnected()';
+    return [code, generator.ORDER_ATOMIC];
 }
 
 export const network_get_connect = function (_, generator) {
