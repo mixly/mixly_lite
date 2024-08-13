@@ -1,9 +1,6 @@
 /* eslint-disable new-cap */
 import Sk from './skulpt/skulpt';
-import {
-    Events,
-    Debug
-} from 'mixly';
+import { Events, Debug } from 'mixly';
 import MIXPY_TEMPLATE from '../templates/python/mixpy.py';
 
 const externalLibs = {//外部引入的第三方库
@@ -186,7 +183,7 @@ export default class PyEngine {
 
     kill() {
         // 新增了sprite相关内容
-        // SPRITE.kill();
+        window.SPRITE.kill();
         //点击取消按钮发送数据
         Sk.execLimit = 0;
         this.executionEnd_();
@@ -272,14 +269,20 @@ export default class PyEngine {
     run(code) {
         // Reset everything
         this.reset();
+        if (code.indexOf('import sprite') !== -1
+            || code.indexOf('from sprite import') !== -1) {
+            window.SPRITE.runit(Sk.TurtleGraphics.target);
+        }
         this.programStatus['running'] = true;
         Sk.misceval.asyncToPromise(() => Sk.importMainWithBody("<stdin>", false, code, true))
             .then(() => {
+                window.SPRITE.running = false;
                 this.programStatus['running'] = false;
                 this.#events_.run('finished');
             })
             .catch((error) => {
                 Debug.error(error);
+                window.SPRITE.running = false;
                 this.programStatus['running'] = false;
                 this.#events_.run('error', error);
                 var original = prettyPrintError(error);

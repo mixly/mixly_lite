@@ -24,6 +24,9 @@ ZhHant.MSG = {
     catSocket: "無線插座",
     catRFID: "RFID",
     catStorage: "存儲",
+    catStorageSD: 'SD',
+    catStorageSPIFFS: 'SPIFFS',
+    catStorageEEPROM: 'EEPROM',
     catME_GO:"ME GO",
     catME_G1:"ME G1",
     catPE_G1:"PE G1",
@@ -3003,6 +3006,21 @@ ZhHant.MIXLY_SD_clusterCount = "簇數";
 ZhHant.MIXLY_SD_blocksPerCluster = "每簇扇區數";
 ZhHant.MIXLY_SD_TOTAL_blocks = "總扇區數";
 ZhHant.MIXLY_PRINT_INLINE = "不換行";
+ZhHant.MIXLY_STM32_TFT_GREENTAB = "綠色標籤";
+ZhHant.MIXLY_STM32_TFT_REDTAB = "紅色標籤";
+ZhHant.MIXLY_STM32_TFT_BLACKTAB = "黑色標籤";
+ZhHant.MIXLY_STM32_TFT_FONT_COLOR = "字體顏色";
+ZhHant.MIXLY_STM32_TFT_BACKGROUND_COLOR = "背景顏色";
+ZhHant.MIXLY_STM32_TFT_BACKGROUND = "背景";
+ZhHant.MIXLY_STM32_TFT_SIZE = "尺寸";
+ZhHant.MIXLY_TOOLTIP_STORE_EEPROM_PUT = '寫入任何類型資料到EEPROM特定位址';
+ZhHant.MIXLY_TOOLTIP_STORE_EEPROM_GET = '從EEPROM的特定位址讀取任何類型資料';
+ZhHant.MIXLY_WIFI_LINK_DEVICE = '連結設備';
+ZhHant.MIXLY_STM32_SPI_REMAP = '重新映射';
+ZhHant.MIXLY_RFID_READ_CARD_UID = '讀取卡號';
+ZhHant.MIXLY_RFID_WRITE_CARD = '寫卡片';
+ZhHant.MIXLY_RFID_READ_CARD = '讀卡';
+ZhHant.MIXLY_RFID_BYTE_ARRAY = '位元組陣列';
 ZhHant.MIXLY_STM32_OLED_DRAW_ARC = "畫圓弧";
 ZhHant.MIXLY_STM32_OLED_ARC = "弧段";
 ZhHant.MIXLY_NominalResistance = '常溫電阻值';
@@ -3082,6 +3100,18 @@ ZhHant.ADS1015_Get_Value = 'ADS1015模数转换模块';
 ZhHant.ADS1015_setGain = "ADS1015采样范围和精度";
 ZhHant.MIXLY_MP3_UDISK = '优盘';
 ZhHant.MIXLY_MP3_SOURCE = '播放来源';
+ZhHant.MIXLY_DewPoint = '結露點';
+ZhHant.WeatherGet = '刷新天氣 城市 ';
+ZhHant.WeatherGetToday = '取得今日資料';
+ZhHant.TodayQuality = '空氣品質';
+ZhHant.WeatherGetForecast = '取得15日報資料';
+ZhHant.ForecastHigh = '最高溫度';
+ZhHant.ForecastLow = '最低溫度';
+ZhHant.ForecastYmd = '年月日';
+ZhHant.ForecastAqi = '空氣指數';
+ZhHant.ForecastFx = '風向';
+ZhHant.ForecastFl = '風力';
+ZhHant.ForecastType = '天氣';
 ZhHant.SPACE_ALLOCATION = '空間分配';
 ZhHant.MIXLY_IR_RANGE = '雙紅外測距';
 ZhHant.MIXLY_LASER_RANGE = '鐳射測距儀';
@@ -3138,6 +3168,7 @@ ZhHant.MIXGO_CAR_KEEP_FORWARD = '持續向前';
 ZhHant.MIXGO_CAR_KEEP_BACK = '持續後退';
 ZhHant.MIXGO_CAR_KEEP_LEFT = '持續左轉';
 ZhHant.MIXGO_CAR_KEEP_RIGHT = '持續右轉';
+ZhHant.MIXLY_DewPoint = '結露點';
 ZhHant.MIXLY_LIVE_WEATHER = '天氣實況';
 ZhHant.MIXLY_3_DAY_WEATHER_FORECAST = '3天天氣預報';
 ZhHant.MIXLY_6_LIFE_INDEXES = '6項生活指數';

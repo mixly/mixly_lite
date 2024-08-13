@@ -747,7 +747,13 @@ export const WeatherGetToday = {
         this.setColour(ETHERNET_HUE);
         this.appendDummyInput("")
             .appendField(Blockly.Msg.WeatherGetToday)
-            .appendField(new Blockly.FieldDropdown([[Blockly.Msg.MIXLY_Humidity, "0"], ['PM2.5', "1"], ['PM1.0', "2"], [Blockly.Msg.TodayQuality, "3"], [Blockly.Msg.MIXLY_TEMPERATURE, "4"]]), "type");
+            .appendField(new Blockly.FieldDropdown([
+                [Blockly.Msg.MIXLY_Humidity, "0"],
+                ['PM2.5', "1"],
+                ['PM1.0', "2"],
+                [Blockly.Msg.TodayQuality, "3"],
+                [Blockly.Msg.MIXLY_TEMPERATURE, "4"]
+            ]), "type");
         this.setOutput(true, Number);
         this.setTooltip("返回对应数据 字符串型。");
     }
@@ -759,7 +765,17 @@ export const WeatherGetForecast = {
         this.setColour(ETHERNET_HUE);
         this.appendDummyInput("")
             .appendField(Blockly.Msg.WeatherGetForecast)
-            .appendField(new Blockly.FieldDropdown([[Blockly.Msg.MIXLY_GPS_DATE, "ForecastDate"], [Blockly.Msg.ForecastHigh, "ForecastHigh"], [Blockly.Msg.ForecastLow, "ForecastLow"], [Blockly.Msg.ForecastYmd, "ForecastYmd"], [Blockly.Msg.MIXLY_WEEK, "ForecastWeek"], [Blockly.Msg.ForecastAqi, "ForecastAqi"], [Blockly.Msg.ForecastFx, "ForecastFx"], [Blockly.Msg.ForecastFl, "ForecastFl"], [Blockly.Msg.ForecastType, "ForecastType"]]), "type");
+            .appendField(new Blockly.FieldDropdown([
+                [Blockly.Msg.MIXLY_GPS_DATE, "ForecastDate"],
+                [Blockly.Msg.ForecastHigh, "ForecastHigh"],
+                [Blockly.Msg.ForecastLow, "ForecastLow"],
+                [Blockly.Msg.ForecastYmd, "ForecastYmd"],
+                [Blockly.Msg.MIXLY_WEEK, "ForecastWeek"],
+                [Blockly.Msg.ForecastAqi, "ForecastAqi"],
+                [Blockly.Msg.ForecastFx, "ForecastFx"],
+                [Blockly.Msg.ForecastFl, "ForecastFl"],
+                [Blockly.Msg.ForecastType, "ForecastType"]
+            ]), "type");
         this.appendValueInput('date', Number)
             .appendField(Blockly.Msg.MIXLY_GPS_DATE + '(0~14)');
         this.setOutput(true, Number);

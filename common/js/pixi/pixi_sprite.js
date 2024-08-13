@@ -571,8 +571,6 @@ SPRITE.ClearTimer = ()=>{
 }
 
 SPRITE.GameLoopDisplay = ()=>{
-	if( pyengine.programStatus['running'] === false)SPRITE.running = false;
-	else SPRITE.running = true;
 	if(SPRITE.processingDisplayEvent) {
 		const pSE = SPRITE.processingDisplayEvent;
 		switch (pSE.displayType) {
@@ -662,7 +660,7 @@ SPRITE.GameLoopDisplay = ()=>{
 }
 
 SPRITE.ChangeWidth = (w)=>{
-	const $canvas = $('#spriteContainer canvas');
+	const $canvas = $(SPRITE.renderer.view);
 	const canvasWidth = $canvas.width();
 	const canvasHeight = $canvas.height();
 	$canvas.width(w);
@@ -682,11 +680,13 @@ SPRITE.kill = ()=>{
 	SPRITE.ClearTimer();
 }
 
-SPRITE.runit = ()=>{
+SPRITE.runit = (container) => {
+	const $container = $(container);
+	$container.empty();
 	// Keep the scale mode to nearest
 	PIXI.SCALE_MODES.DEFAULT = PIXI.SCALE_MODES.NEAREST;
 	SPRITE.renderer = PIXI.autoDetectRenderer(SPRITE.canvasWidth, SPRITE.canvasHeight,{backgroundColor : 0x00FFFFFF});
-	document.getElementById("spriteContainer").appendChild(SPRITE.renderer.view);
+	$container.append(SPRITE.renderer.view);
 	// Create SPRITE.stage container
 	// SPRITE.stage = new PIXI.Container();
 	SPRITE.pointer = {x:0, y:0};

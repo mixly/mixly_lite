@@ -32,7 +32,23 @@ export const ir_recv = {
 //红外发射模块（NEC）
 export const ir_send_nec = {
     init: function () {
-        var TYPE = [['RC5', 'RC5'], ['RC6', 'RC6'], ['NEC', 'NEC'], ['Sony', 'Sony'], ['Panasonic', 'Panasonic'], ['JVC', 'JVC'], ['SAMSUNG', 'SAMSUNG'], ['Whynter', 'Whynter'], ['AiwaRCT501', 'AiwaRCT501'], ['LG', 'LG'], ['Sanyo', 'Sanyo'], ['Mitsubishi', 'Mitsubishi'], ['DISH', 'DISH'], ['SharpRaw', 'SharpRaw'], ['Denon', 'Denon']];
+        var TYPE = [
+            ['RC5', 'RC5'],
+            ['RC6', 'RC6'],
+            ['NEC', 'NEC'],
+            ['Sony', 'Sony'],
+            ['Panasonic', 'Panasonic'],
+            ['JVC', 'JVC'],
+            ['SAMSUNG', 'SAMSUNG'],
+            ['Whynter', 'Whynter'],
+            ['AiwaRCT501', 'AiwaRCT501'],
+            ['LG', 'LG'],
+            ['Sanyo', 'Sanyo'],
+            ['Mitsubishi', 'Mitsubishi'],
+            ['DISH', 'DISH'],
+            ['SharpRaw', 'SharpRaw'],
+            ['Denon', 'Denon']
+        ];
         this.setColour(COMMUNICATE_HUE);
         this.appendDummyInput("")
             .appendField(Blockly.Msg.MIXLY_IR_SEND_NEC1)
@@ -185,6 +201,7 @@ export const i2c_slave_write_array = {
         this.setTooltip(Blockly.Msg.MIXLY_TOOLTIP_I2C_SLAVE_WRITE_ARRAY);
     }
 };
+
 // IIC从机读取字节数
 export const i2c_howmany = {
     init: function () {
@@ -289,10 +306,10 @@ export const i2c_master_writer = {
             .appendField(Blockly.Msg.HTML_VALUE);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
-
         this.setTooltip(Blockly.Msg.MIXLY_TOOLTIP_I2C_MASTER_WRITE);
     }
 };
+
 export const i2c_master_reader = {
     init: function () {
         this.setColour(COMMUNICATE_HUE);
@@ -309,6 +326,7 @@ export const i2c_master_reader = {
         this.setTooltip(Blockly.Msg.MIXLY_TOOLTIP_I2C_MASTER_READ);
     }
 };
+
 export const i2c_master_reader2 = {
     init: function () {
         this.setColour(COMMUNICATE_HUE);
@@ -477,7 +495,6 @@ export const RFID_readcarddata = {
             .appendField(Blockly.Msg.MIXLY_COMMUNICATION_DATA_FROM)
         this.setOutput(true, Number);
         this.setTooltip(Blockly.Msg.MIXLY_TOOLTIP_RFID_READBLOCK);
-
     }
 };
 

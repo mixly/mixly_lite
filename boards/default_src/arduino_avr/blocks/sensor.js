@@ -48,7 +48,11 @@ export const gps_xxx_isValid = {
         this.setColour(SENSOR_HUE);
         this.appendDummyInput()
             .appendField("GPS")
-            .appendField(new Blockly.FieldDropdown([[Blockly.Msg.MIXLY_GPS_LOCATION, "location"], [Blockly.Msg.MIXLY_GPS_DATE, "date"], [Blockly.Msg.MIXLY_GPS_TIME, "time"]]), "WHAT")
+            .appendField(new Blockly.FieldDropdown([
+                [Blockly.Msg.MIXLY_GPS_LOCATION, "location"],
+                [Blockly.Msg.MIXLY_GPS_DATE, "date"],
+                [Blockly.Msg.MIXLY_GPS_TIME, "time"]
+            ]), "WHAT")
             .appendField(Blockly.Msg.MIXLY_GPS_ISVALID);
         this.setOutput(true, Boolean);
         this.setTooltip(Blockly.Msg.MIXLY_TOOLTIP_GPS_DATA_VAILD);
@@ -60,7 +64,17 @@ export const gps_getData_xxx = {
         this.setColour(SENSOR_HUE);
         this.appendDummyInput()
             .appendField(Blockly.Msg.MIXLY_GPS_GET)
-            .appendField(new Blockly.FieldDropdown([[Blockly.Msg.MIXLY_GPS_LOCATION_LAT, "location.lat"], [Blockly.Msg.MIXLY_GPS_LOCATION_LNG, "location.lng"], [Blockly.Msg.MIXLY_GPS_DATE_YEAR, "date.year"], [Blockly.Msg.MIXLY_GPS_DATE_MONTH, "date.month"], [Blockly.Msg.MIXLY_GPS_DATE_DAY, "date.day"], [Blockly.Msg.MIXLY_GPS_TIME_HOUR, "time.hour"], [Blockly.Msg.MIXLY_GPS_TIME_MINUTE, "time.minute"], [Blockly.Msg.MIXLY_GPS_TIME_SECOND, "time.second"], [Blockly.Msg.MIXLY_GPS_TIME_CENTISECOND, "time.centisecond"]]), "WHAT");
+            .appendField(new Blockly.FieldDropdown([
+                [Blockly.Msg.MIXLY_GPS_LOCATION_LAT, "location.lat"],
+                [Blockly.Msg.MIXLY_GPS_LOCATION_LNG, "location.lng"],
+                [Blockly.Msg.MIXLY_GPS_DATE_YEAR, "date.year"],
+                [Blockly.Msg.MIXLY_GPS_DATE_MONTH, "date.month"],
+                [Blockly.Msg.MIXLY_GPS_DATE_DAY, "date.day"],
+                [Blockly.Msg.MIXLY_GPS_TIME_HOUR, "time.hour"],
+                [Blockly.Msg.MIXLY_GPS_TIME_MINUTE, "time.minute"],
+                [Blockly.Msg.MIXLY_GPS_TIME_SECOND, "time.second"],
+                [Blockly.Msg.MIXLY_GPS_TIME_CENTISECOND, "time.centisecond"]
+            ]), "WHAT");
         this.setOutput(true, Number);
         this.setTooltip(Blockly.Msg.MIXLY_TOOLTIP_GPS_GETDATA.replace('%1', this.getFieldValue('WHAT')));
     }
@@ -121,6 +135,7 @@ export const LM35 = {
         this.setTooltip(Blockly.Msg.MIXLY_TOOLTIP_LM35);
     }
 };
+
 //DS18B20温度传感器
 export const ds18b20 = {
     init: function () {
@@ -135,6 +150,7 @@ export const ds18b20 = {
         this.setTooltip(Blockly.Msg.MIXLY_TOOLTIP_DS18);
     }
 };
+
 //初始化MLX90614红外测温传感器
 export const mlx90614_init = {
     init: function () {
@@ -150,6 +166,7 @@ export const mlx90614_init = {
         this.setHelpUrl("");
     }
 };
+
 //MLX90614获取数据
 export const mlx90614_get_data = {
     init: function () {
@@ -169,6 +186,7 @@ export const mlx90614_get_data = {
         this.setHelpUrl("");
     }
 };
+
 //DF称重模块
 export const weightSensor = {
     init: function () {
@@ -191,6 +209,7 @@ export const weightSensor = {
         // this.setFieldValue("4","SCK");
     }
 };
+
 //DS1302 RTC
 export const DS1302_init = {
     init: function () {
@@ -237,43 +256,9 @@ export const DS1307_init = {
         this.setNextStatement(true, null);
         this.setInputsInline(true);
         this.setTooltip(Blockly.Msg.MIXLY_TOOLTIP_DS1307_INIT);
-    },
-    //mutation有问题，暂时弃用
-    /*mutationToDom: function() {
-        var container = document.createElement('mutation');
-        var RTCType = (this.getFieldValue('RTCType') == 'DS1302');
-        console.log('======change in mutationToDom==========')
-        console.log(RTCType);
-        container.setAttribute('RTCType', RTCType);
-        return container;
-        },
-        domToMutation: function(xmlElement) {
-        var type = (xmlElement.getAttribute('RTCType') == 'true');
-        console.log('======change in domToMutation==========')
-        console.log(type);
-        this.updateShape_(type);
-        },
-        updateShape_: function(type) {
-    // Add or remove reset pin.
-    console.log('======change in updateShape_==========')
-    console.log(type);
-    if (type) {
-        console.log('why not me?')
-        this.appendValueInput("RST")
-            .appendField("RST#")
-            .setCheck(Number);
-    } else{
-      /*if (this.childBlocks_.length > 0) {
-             if (this.childBlocks_[length-1].type == 'Number') {
-            this.childBlocks_[length-1].unplug();
-            break;
-          }
-      }
-      this.removeInput('RST');
     }
-  }*/
-
 };
+
 //传感器-实时时钟块_时间变量
 var RTC_TIME_TYPE = [
     [Blockly.Msg.MIXLY_YEAR, "Year"],
@@ -285,7 +270,6 @@ var RTC_TIME_TYPE = [
     [Blockly.Msg.MIXLY_WEEK, "DayOfWeek"],
 
 ];
-
 
 //传感器-实时时钟块_获取时间
 export const RTC_get_time = {
@@ -305,6 +289,7 @@ export const RTC_get_time = {
         this.setTooltip(Blockly.Msg.MIXLY_TOOLTIP_RTC_GETTIME.replace('%1', this.getFieldValue("TIME_TYPE")));
     }
 };
+
 // //传感器-实时时钟块_设置时间
 export const RTC_time = {
     init: function () {
@@ -347,6 +332,7 @@ export const RTC_date = {
         this.setTooltip(Blockly.Msg.MIXLY_TOOLTIP_RTC_SETTIME);
     }
 };
+
 //设置时间
 export const RTC_set_time = {
     init: function () {
@@ -364,6 +350,7 @@ export const RTC_set_time = {
         this.setHelpUrl("");
     }
 };
+
 //获取烧录时间和日期
 export const get_system_date_time = {
     init: function () {
@@ -377,6 +364,7 @@ export const get_system_date_time = {
         this.setHelpUrl("");
     }
 };
+
 //传感器-实时时钟块_设置日期
 export const RTC_set_date = {
     init: function () {
@@ -396,6 +384,7 @@ var SHT20_TYPE = [
     [Blockly.Msg.MIXLY_TEMPERATURE, "sht20.readTemperature()"],
     [Blockly.Msg.MIXLY_Humidity, "sht20.readHumidity()"],
 ];
+
 export const SHT20 = {
     init: function () {
         this.setColour(SENSOR_HUE);
@@ -409,6 +398,7 @@ export const SHT20 = {
         this.setTooltip();
     }
 };
+
 var ADXL345_GETAB = [
     [Blockly.Msg.MixGo_MPU9250_AX, "accel.getAccelerationX()"],
     [Blockly.Msg.MixGo_MPU9250_AY, "accel.getAccelerationY()"],
@@ -417,6 +407,7 @@ var ADXL345_GETAB = [
     [Blockly.Msg.MixGo_MPU9250_AY + "(g)", "accel.getAccelerationY()/256.0"],
     [Blockly.Msg.MixGo_MPU9250_AZ + "(g)", "accel.getAccelerationZ()/256.0"],
 ];
+
 //传感器-重力感应块-获取数据
 export const ADXL345 = {
     init: function () {
@@ -431,12 +422,14 @@ export const ADXL345 = {
         this.setTooltip();
     }
 };
+
 var LIS3DHTR_GETDATA = [
     [Blockly.Msg.MixGo_MPU9250_AX, "LIS.getAccelerationX()"],
     [Blockly.Msg.MixGo_MPU9250_AY, "LIS.getAccelerationY()"],
     [Blockly.Msg.MixGo_MPU9250_AZ, "LIS.getAccelerationZ()"],
     [Blockly.Msg.MIXLY_TEMPERATURE, "LIS.getTemperature()"],
 ];
+
 export const LIS3DHTR = {
     init: function () {
         this.setColour(SENSOR_HUE);
@@ -450,6 +443,7 @@ export const LIS3DHTR = {
         this.setTooltip();
     }
 };
+
 export const ADXL345_setOffset = {
     init: function () {
         this.setColour(SENSOR_HUE);
@@ -507,6 +501,7 @@ var Encoder_NO = [
     [Blockly.Msg.MIXLY_ENCODER + 3, "3"],
     [Blockly.Msg.MIXLY_ENCODER + 4, "4"]
 ];
+
 //旋转编码器定义
 export const encoder_init = {
     init: function () {
@@ -760,6 +755,7 @@ export const PS2_init = {
         this.setFieldValue("12", "PS2_CLK");
     }
 };
+
 export const PS2_update = {
     init: function () {
         this.setColour(SENSOR_HUE);
@@ -770,6 +766,7 @@ export const PS2_update = {
         this.setInputsInline(true);
     }
 };
+
 var PSBUTTON = [
     [Blockly.Msg.PS2_TRIANGLE, "PSB_GREEN"],
     [Blockly.Msg.PS2_CIRCLE, "PSB_RED"],
@@ -875,7 +872,11 @@ export const tcs230_Get_RGB = {
         this.appendDummyInput()
             .appendField("TCS230")
             .appendField(Blockly.Msg.MIXLY_GET)
-            .appendField(new Blockly.FieldDropdown([[Blockly.Msg.COLOUR_RGB_RED, "R"], [Blockly.Msg.COLOUR_RGB_GREEN, "G"], [Blockly.Msg.COLOUR_RGB_BLUE, "B"]]), "tcs230_color");
+            .appendField(new Blockly.FieldDropdown([
+                [Blockly.Msg.COLOUR_RGB_RED, "R"],
+                [Blockly.Msg.COLOUR_RGB_GREEN, "G"],
+                [Blockly.Msg.COLOUR_RGB_BLUE, "B"]
+            ]), "tcs230_color");
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour(SENSOR_HUE);
@@ -1034,7 +1035,6 @@ export const arduino_keypad_event = {
     }
 };
 
-
 var MixGo_MPU9250_GETAB = [
     [Blockly.Msg.MixGo_MPU9250_AX, "a"],
     [Blockly.Msg.MixGo_MPU9250_AY, "b"],
@@ -1092,8 +1092,15 @@ export const NTC_TEMP = {
 export const AHT20_21 = {
     init: function () {
         this.setColour(SENSOR_HUE);
-        this.appendDummyInput("").appendField("AHT20/21" + Blockly.Msg.MIXLY_TEM_HUM)
-        this.appendDummyInput("").setAlign(Blockly.inputs.Align.RIGHT).appendField(new Blockly.FieldDropdown([[Blockly.Msg.MIXLY_TEMPERATURE, "AHT21.GetTemperature()"], [Blockly.Msg.MIXLY_Humidity, "AHT21.GetHumidity()"], [Blockly.Msg.MIXLY_DewPoint, "AHT21.GetDewPoint()"]]), "AHT21_TYPE");
+        this.appendDummyInput("")
+            .appendField("AHT20/21" + Blockly.Msg.MIXLY_TEM_HUM)
+        this.appendDummyInput("")
+            .setAlign(Blockly.inputs.Align.RIGHT)
+            .appendField(new Blockly.FieldDropdown([
+                [Blockly.Msg.MIXLY_TEMPERATURE, "AHT21.GetTemperature()"],
+                [Blockly.Msg.MIXLY_Humidity, "AHT21.GetHumidity()"],
+                [Blockly.Msg.MIXLY_DewPoint, "AHT21.GetDewPoint()"]
+            ]), "AHT21_TYPE");
         this.setInputsInline(true);
         this.setOutput(true);
         this.setTooltip();
